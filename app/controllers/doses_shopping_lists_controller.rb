@@ -1,0 +1,2 @@
+class DosesShoppingListsController < ApplicationController
+end
