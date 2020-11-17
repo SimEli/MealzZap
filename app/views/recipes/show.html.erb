@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="elements">
+    <div class="text_image">
+      <div id="image">
+        <%= cl_image_tag @recipe.photo.key, height: 400, width: 300, crop: :fill if @recipe.photo.attached?%>
+      </div>
+      <div id="text">
+        <h2><%= @recipe.name %></h2>
+        <h4><%= @recipe.description %></h4>
+        <h5><%= @recipe.serves %></h5>
+        <p><%= @recipe.preparation_time %></p>
+        <p><%= @recipe.cooking_time %></p>
+      </div>
+    </div>
+    <div id="map"
+      style="width: 45%; height: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  <h4 id='bookings'>recipe bookings</h4>
+  <ol>
+    <% @recipe.bookings.each do |booking| %>
+      <li> <%= booking.start %> <%= booking.end %></li>
+    <% end %>
+  </ol>
+  <%# <%= link_to "Book", new_recipe_booking_path(@recipe), class: 'buttons' %>
+  <%# <%= link_to "Back to recipes", recipes_path %>
+  <%# <%= link_to "Edit", edit_recipe_path %>
+  <div class="links-to">
+    <div class="buttons">
+        <div id="booknow"><%= link_to "Book", new_recipe_booking_path(@recipe) %></div>
+        <div id="backindex"><%= link_to "Back to recipes", recipes_path %></div>
+        <div id="editbtn"><%= link_to "Edit", edit_recipe_path %></div>
+    </div>
+  </div>
+</div>
+
