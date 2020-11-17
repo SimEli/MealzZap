@@ -1,0 +1,11 @@
+class CreateDoses < ActiveRecord::Migration[6.0]
+  def change
+    create_table :doses do |t|
+      t.references :ingredient
+      t.references :recipe, null: false, foreign_key: true
+      t.integer :quantity
+
+      t.timestamps
+    end
+  end
+end
