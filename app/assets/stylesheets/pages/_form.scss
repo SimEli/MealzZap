@@ -1,0 +1,11 @@
+.form {
+  display: grid;
+  grid-gap: 30px;
+  // align: center;
+  align-items: center;
+  justify-items: center;
+
+  #input {
+    width: 500px;
+  }
+}
