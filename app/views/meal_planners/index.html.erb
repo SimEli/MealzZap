@@ -1,14 +1,14 @@
 
-    <h1>Categories</h1>
-  </div>
+    <h1>Meal planner</h1>
+
   <div class="cards">
-    <% @categories.each do |category| %>
-      <%= link_to category_path(category),class: "links" do %>
+    <% @meal_planners.each do |meal_planner| %>
+      <%= link_to meal_planner_path(meal_planner),class: "links" do %>
         <div class="card-recipe">
           <%# <%= cl_image_tag recipe.photo.key, height: 400, width: 300, crop: :fill if recipe.photo.attached?%> %>
           <div class="card-recipe-infos">
             <div>
-              <h2><%= category.name %></h2>
+              <h2><%= meal_planner.name %></h2>
             </div>
           </div>
         </div>
@@ -18,5 +18,3 @@
 </div>
 
 <%= link_to "Go back to homepage", root_path %>
-
-
