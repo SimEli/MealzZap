@@ -7,7 +7,34 @@
           <%= f.text_field :name %>
         </div>
       </div>
-      <%= end %>
+      <div id="description">
+        <%= f.label :description %>
+        <div id="input">
+          <%= f.text_field :description %>
+        </div>
+      </div>
+      <div id="preparation_time">
+        <%= f.label :preparation_time %>
+        <div id="input">
+          <%= f.text_field :preparation_time %>
+        </div>
+      </div>
+      <div id="cooking_time">
+        <%= f.label :cooking_time %>
+        <div id="input">
+          <%= f.text_field :cooking_time %>
+        </div>
+      </div>
+      <div id="serves">
+        <%= f.label :serves %>
+        <div id="input">
+          <%= f.text_field :serves %>
+        </div>
+      </div>
+        <%# <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 
     <div class="buttons">
       <div id="backindex"><%= link_to "Back to recipes", recipes_path %></div>

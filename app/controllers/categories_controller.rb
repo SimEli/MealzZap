@@ -3,7 +3,9 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def show
+  # def show
+
+  def new
     @categories = Category.new
   end
 end

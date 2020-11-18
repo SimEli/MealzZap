@@ -7,14 +7,21 @@ Rails.application.routes.draw do
     # resources :recipe_categories
   end
 
-  resources :ingredients
+  # resources :ingredients
 
   resources :categories
 
   resources :reviews
 
+  resources :user_meal_planners
 
   # resources :meal_planners do
   #   resources :meal_planners_recipes
-# end
+  # end
+
+  # resources :shopping_lists
+
+  resources :doses_shopping_lists
+
+  resources :users
 end
