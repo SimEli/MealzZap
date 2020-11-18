@@ -1,13 +1,14 @@
 class ReviewsController < ApplicationController
-  def create
-    @recipe = Recipe.find(params[:recipe_id])
+    def create
     @review = Review.new(review_params)
-    @review.recipe = @recipe
+    @review.user = current_user
+    @review.recipe = recipe
     if @review.save
-      redirect_to recipe_path(@recipe)
+      redirect_to recipe_path(@review.recipe)
     else
-      render 'recipes/show'
+      render "recipes/new"
     end
+
   end
 
   private
@@ -15,4 +16,10 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:text, :rating)
   end
+
+  def recipe
+    recipe_id = params[:recipe_id]
+    Recipe.find(recipe_id)
+  end
 end
+

@@ -1,1 +1,23 @@
-<h1>Recipes</h2>
+<div class="container">
+  <div class="title">
+    <h1>Recipes</h1>
+  </div>
+  <div class="cards">
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(@recipe),class: "links" do %>
+        <div class="card-recipe">
+          <%= cl_image_tag recipe.photo.key, height: 400, width: 300, crop: :fill if recipe.photo.attached?%>
+          <div class="card-recipe-infos">
+            <div>
+              <h2><%= recipe.name %></h2>
+              <p><%= recipe.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+<%= link_to "More details",recipes_path(@recipe) %>
