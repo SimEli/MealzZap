@@ -1,5 +1,6 @@
 <div class="container">
   <div class="title">
+
     <h1>All Recipes</h1>
   </div>
   <div class="cards">
@@ -16,10 +17,13 @@
               <%= recipe.serves %>
               <%# <p>/day</p> %>
             </h2>
+
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
+
+<%= link_to "More details",recipes_path(@recipe) %>
 

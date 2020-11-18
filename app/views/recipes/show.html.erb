@@ -12,19 +12,13 @@
         <p><%= @recipe.cooking_time %></p>
       </div>
     </div>
-    <div id="map"
-      style="width: 45%; height: 400px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
-  
+  </div>  
   
   <div class="links-to">
     <div class="buttons">
         <%# <div id="booknow"><%= link_to "Book", new_recipe_booking_path(@recipe) %></div> %>
         <div id="backindex"><%= link_to "Back to recipes", recipes_path %></div>
-        <div id="editbtn"><%= link_to "Edit", edit_recipe_path %></div>
+        <div id="editbtn"><%= link_to "Edit", edit_recipe_path(@recipe) %></div>
     </div>
   </div>
 </div>
