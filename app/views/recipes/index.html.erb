@@ -10,6 +10,7 @@
           <%# <%= cl_image_tag recipe.photo.key, height: 400, width: 300, crop: :fill if recipe.photo.attached?%> %>
           <div class="card-recipe-infos">
             <div>
+            <%# WE CAN ADD A FIELD --> ADDED BY 'USER' so when it goes public we know who posted it %>
               <h2><%= recipe.name %></h2>
               <p><%= recipe.description %></p>
             </div>
@@ -25,5 +26,6 @@
   </div>
 </div>
 
-<%= link_to "More details",recipes_path(@recipe) %>
+<div id="listnow"><%= link_to "Add a new recipe", new_recipe_path %></div>
+<%# <%= link_to "More details",recipes_path(@recipe) %> %>
 
