@@ -14,6 +14,7 @@ puts "Creating recipes..."
 Recipe.destroy_all
 
 chicken = {
+  user_id: 1,
   name: "Chicken souvlaki",
   description: "Chicken pita",
   preparation_time: "35 min",
@@ -24,6 +25,7 @@ recipe = Recipe.new(chicken)
 recipe.save
 
 pancakes = {
+  user_id: 1,
   name: "pancakes with chocolate",
   description: "tasty",
   preparation_time: "35 min",
@@ -34,6 +36,7 @@ recipe = Recipe.new(pancakes)
 recipe.save
 
 pizza = {
+  user_id: 1,
   name: "Pizza Margarita",
   description: "very tasty",
   preparation_time: "35 min",
