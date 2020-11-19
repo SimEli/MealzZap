@@ -1,9 +1,8 @@
 <div class="container">
   <div class="title">
-
     <h1>All Recipes</h1>
   </div>
-  <div class="cards">
+<div class="cards">
     <% @recipes.each do |recipe| %>
       <%= link_to recipe_path(recipe),class: "links" do %>
         <div class="card-recipe">
@@ -12,10 +11,8 @@
             <div>
             <%# WE CAN ADD A FIELD --> ADDED BY 'USER' so when it goes public we know who posted it %>
               <h2><%= recipe.name %></h2>
-              <p><%= recipe.description %></p>
             </div>
             <h2 class="card-recipe-pricing">
-              <%= recipe.serves %>
               <%# <p>/day</p> %>
             </h2>
 
