@@ -8,7 +8,7 @@
 
 # CODE TO UNCOMMENT WHEN CLOUDINARY READY
 
-# require "open-uri"
+require "open-uri"
 
 # puts "Creating recipes..."
 # Recipe.destroy_all

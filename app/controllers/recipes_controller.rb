@@ -1,7 +1,13 @@
 class RecipesController < ApplicationController
   before_action :recipe_find, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     @recipes = Recipe.all
+  end
+
+  def my_index
+    @recipes = current_user.recipes
+    render :index
   end
 
   def show
@@ -36,8 +42,8 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :serves)
-    # :public, :image
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :serves, :image)
+    # :public
   end
 
   def recipe_find
