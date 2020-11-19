@@ -21,7 +21,9 @@ chicken = {
   cooking_time: "30 min",
   serves: 5,
 }
+file = URI.open('https://res.cloudinary.com/de6iqiwqr/image/upload/v1605198442/recipes/chicken curry-benua_da-vinci_fr5lku.jpg')
 recipe = Recipe.new(chicken)
+recipe.image.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 recipe.save
 
 pancakes = {
@@ -32,7 +34,9 @@ pancakes = {
   cooking_time: "30 min",
   serves: 4,
 }
+file = URI.open('https://res.cloudinary.com/de6iqiwqr/image/upload/v1605198442/recipes/chicken curry-benua_da-vinci_fr5lku.jpg')
 recipe = Recipe.new(pancakes)
+recipe.image.attach(io: file, filename: 'ness.jpg', content_type: 'image/jpg')
 recipe.save
 
 pizza = {
@@ -43,7 +47,9 @@ pizza = {
   cooking_time: "30 min",
   serves: 6,
 }
+file = URI.open('https://res.cloudinary.com/de6iqiwqr/image/upload/v1605198442/recipes/chicken curry-benua_da-vinci_fr5lku.jpg')
 recipe = Recipe.new(pizza)
+recipe.image.attach(io: file, filename: 'nesss.jpg', content_type: 'image/jpg')
 recipe.save
 
 

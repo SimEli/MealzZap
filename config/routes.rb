@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :doses
     # resources :recipe_categories
   end
-
+  get 'my_cookbook', to: "recipes#my_index"
   # resources :ingredients
 
   resources :categories
