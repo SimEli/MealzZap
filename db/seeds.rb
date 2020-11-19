@@ -8,7 +8,7 @@
 
 # CODE TO UNCOMMENT WHEN CLOUDINARY READY
 
-# require "open-uri"
+require "open-uri"
 
 puts "Creating recipes..."
 Recipe.destroy_all
@@ -21,7 +21,7 @@ chicken = {
   cooking_time: "30 min",
   serves: 5,
 }
-file = URI.open('https://res.cloudinary.com/de6iqiwqr/image/upload/v1605198442/recipes/chicken curry-benua_da-vinci_fr5lku.jpg')
+file = URI.open('https://res.cloudinary.com/mealzzap/image/upload/v1605794724/t%C3%A9l%C3%A9chargement_kipjca.jpg')
 recipe = Recipe.new(chicken)
 recipe.image.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 recipe.save
@@ -34,7 +34,7 @@ pancakes = {
   cooking_time: "30 min",
   serves: 4,
 }
-file = URI.open('https://res.cloudinary.com/de6iqiwqr/image/upload/v1605198442/recipes/chicken curry-benua_da-vinci_fr5lku.jpg')
+file = URI.open('https://res.cloudinary.com/mealzzap/image/upload/v1605794758/t%C3%A9l%C3%A9chargement_1_aqbjej.jpg')
 recipe = Recipe.new(pancakes)
 recipe.image.attach(io: file, filename: 'ness.jpg', content_type: 'image/jpg')
 recipe.save
@@ -47,7 +47,7 @@ pizza = {
   cooking_time: "30 min",
   serves: 6,
 }
-file = URI.open('https://res.cloudinary.com/de6iqiwqr/image/upload/v1605198442/recipes/chicken curry-benua_da-vinci_fr5lku.jpg')
+file = URI.open('https://res.cloudinary.com/mealzzap/image/upload/v1605794807/t%C3%A9l%C3%A9chargement_2_cofosn.jpg')
 recipe = Recipe.new(pizza)
 recipe.image.attach(io: file, filename: 'nesss.jpg', content_type: 'image/jpg')
 recipe.save
