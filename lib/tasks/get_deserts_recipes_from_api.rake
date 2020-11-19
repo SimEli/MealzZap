@@ -24,7 +24,7 @@ task :get_desserts_recipes_from_api do
   20.times do |i|
     parsed_recipes = parsed_response["recipes"][i - 1]
     recipe = Recipe.create!(
-      # image: parsed_recipes["image"],
+      image: parsed_recipes["image"],
       name: parsed_recipes["title"],
       description: parsed_recipes["summary"],
       cooking_time: parsed_recipes["readyInMinutes"],
