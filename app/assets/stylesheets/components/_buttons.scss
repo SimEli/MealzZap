@@ -1,0 +1,24 @@
+.buttons {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.button {
+  margin-left: 20px;
+  color: white;
+  background-color: #121449;
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #F88CA5;
+  transition-duration: 0.4s;
+  text-decoration: none;
+}

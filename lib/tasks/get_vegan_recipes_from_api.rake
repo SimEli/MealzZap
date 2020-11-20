@@ -1,7 +1,8 @@
-desc "adding vegetarian recipes"
+# get_vegan_recipes_from_api.rake
+desc "adding vegan recipes"
 
-task :get_vegetarian_recipes_from_api do
-  url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=5&tags=vegetarian")
+task :get_vegan_recipes_from_api do
+  url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=5&tags=vegan")
 
   http = Net::HTTP.new(url.host, url.port)
   http.use_ssl = true
@@ -17,9 +18,9 @@ task :get_vegetarian_recipes_from_api do
   user = User.find_by(email: "admin@icloud.com")
   parsed_response = JSON.parse response.read_body
 
-  category = Category.find_by(name: "vegetarian")
+  category = Category.find_by(name: "vegan")
   if category.nil?
-    category = Category.create!(name: "vegetarian")
+    category = Category.create!(name: "vegan")
   end
 
   20.times do |i|
@@ -33,8 +34,8 @@ task :get_vegetarian_recipes_from_api do
       user: user
     )
 
-    file = URI.open(parsed_recipes["image"])
-    recipe.image.attach(io: file, content_type: 'image/png', filename: parsed_recipes["image"])
+    file = URI.open(parsed_recipe["image"])
+    recipe.image.attache(io: file, content_type: 'image/png')
 
     RecipeCategory.create!(
       recipe: recipe,
