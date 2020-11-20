@@ -1,16 +1,10 @@
 <div class="container">
   <div class="form">
-    <%= simple_form_for(artwork) do |f| %>
+    <%= simple_form_for(meal_planner) do |f| %>
       <div id="name">
         <%= f.label :name %>
         <div id="input">
           <%= f.text_field :name %>
-        </div>
-      </div>
-      <div id="artist">
-        <%= f.label :artist %>
-        <div id="input">
-          <%= f.text_field :artist %>
         </div>
       </div>
       <div id="description">
@@ -19,41 +13,31 @@
           <%= f.text_field :description %>
         </div>
       </div>
-      <div id="size">
-        <%= f.label :size %>
+      <div id="preparation_time">
+        <%= f.label :preparation_time %>
         <div id="input">
-          <%= f.text_field :size %>
+          <%= f.text_field :preparation_time %>
         </div>
       </div>
-      <div id="city">
-        <%= f.label :city %>
+      <div id="cooking_time">
+        <%= f.label :cooking_time %>
         <div id="input">
-          <%= f.text_field :city %>
+          <%= f.text_field :cooking_time %>
         </div>
       </div>
-      <div id="category">
-        <%= f.label :category %>
+      <div id="serves">
+        <%= f.label :serves %>
         <div id="input">
-          <%= f.text_field :category %>
+          <%= f.text_field :serves %>
         </div>
       </div>
-      <div id="price">
-        <%= f.label :price %>
-        <div id="input">
-          <%= f.text_field :price %>
-        </div>
-      </div>
-        <%= f.input :photo, as: :file %>
+        <%# <%= f.input :photo, as: :file %>
       <%= f.submit %>
     <% end %>
   </div>
+
     <div class="buttons">
       <div id="backindex"><%= link_to "Back to recipes", recipes_path %></div>
     </div>
 </div>
-
-
-
-
-
 

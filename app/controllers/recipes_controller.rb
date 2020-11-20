@@ -1,7 +1,14 @@
 class RecipesController < ApplicationController
+  before_action :recipe_find, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     @recipes = Recipe.all
   end
+
+  #def my_index
+   # @recipes = current_user.recipes
+    #render :index
+  #end
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -13,8 +20,8 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(recipe_params)
-
-    if @recipe.save
+    @recipe.user = current_user
+    if @recipe.save!
       redirect_to recipe_path(@recipe)
     else
       render "recipes/new"
@@ -35,12 +42,11 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :cooking_time, :preparation_time, :serves, :public, :image)
-
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :serves, :image)
+    # :public
   end
 
-  def recipe
-    recipe_id = params[:recipe_id]
-    Recipe.find(recipe_id)
+  def recipe_find
+    @recipe = Recipe.find(params[:id])
   end
 end
