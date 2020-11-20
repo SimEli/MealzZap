@@ -19,9 +19,12 @@ Rails.application.routes.draw do
   #   resources :meal_planners_recipes
   # end
 
-  # resources :shopping_lists
+   resources :user_shopping_lists
 
-  resources :doses_shopping_lists
+  #resources :doses_shopping_lists
 
   resources :users
+
+  resources :user_recipes
 end
+
