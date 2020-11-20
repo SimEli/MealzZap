@@ -1,7 +1,7 @@
 # get_vegan_recipes_from_api.rake
 desc "adding vegan recipes"
 
-task :get_vegan_recipes_from_api do
+task get_vegan_recipes_from_api: :environment do
   url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=5&tags=vegan")
 
   http = Net::HTTP.new(url.host, url.port)
