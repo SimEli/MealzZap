@@ -1,3 +1,7 @@
+<h1>My recipes</h1>
+
+<h3>My list is empty</h3>
+
 <div class="container">
   <div class="title">
     <h1>All Recipes</h1>
@@ -12,15 +16,13 @@
             <%# WE CAN ADD A FIELD --> ADDED BY 'USER' so when it goes public we know who posted it %>
               <h2><%= recipe.name %></h2>
             </div>
+            <h2 class="card-recipe-pricing">
+              <%# <p>/day</p> %>
+            </h2>
+
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
-
-
-<div id="listnow"><%= link_to "Back to homepage", root_path %></div>
-
-<%# <%= link_to "More details",recipes_path(@recipe) %> %>
-

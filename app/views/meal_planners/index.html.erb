@@ -1,20 +1,4 @@
 
     <h1>Meal planner</h1>
 
-  <div class="cards">
-    <% @meal_planners.each do |meal_planner| %>
-      <%= link_to meal_planner_path(meal_planner),class: "links" do %>
-        <div class="card-recipe">
-          <%# <%= cl_image_tag recipe.photo.key, height: 400, width: 300, crop: :fill if recipe.photo.attached?%> %>
-          <div class="card-recipe-infos">
-            <div>
-              <h2><%= meal_planner.name %></h2>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
 
-<%= link_to "Go back to homepage", root_path %>
