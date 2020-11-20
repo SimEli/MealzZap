@@ -1,6 +1,11 @@
 <h3>My Cookbook is empty</h3>
 
-<div><%= link_to "Go back to my profile", users_path %></div>
+<div class="buttons">
+  <div class="button">
+    <%= link_to "Add a Category", new_user_category_path %>
+  </div>
 
-
-<div><%= link_to "Create a new recipe", new_recipe_path %></div>
+  <div class="button">
+    <%= link_to "Add a Recipe", new_recipe_path %>
+  </div>
+</div>

@@ -34,7 +34,7 @@ task :get_desserts_recipes_from_api do
     )
 
     file = URI.open(parsed_recipe["image"])
-    recipe.image.attache(io: file, content_type: 'image/png')
+    recipe.image.attach(io: file, content_type: 'image/png')
 
     RecipeCategory.create!(
       recipe: recipe,

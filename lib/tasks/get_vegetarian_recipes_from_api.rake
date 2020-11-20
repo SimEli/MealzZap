@@ -22,7 +22,7 @@ task :get_vegetarian_recipes_from_api do
     category = Category.create!(name: "vegetarian")
   end
 
-  20.times do |i|
+  5.times do |i|
     parsed_recipes = parsed_response["recipes"][i - 1]
     recipe = Recipe.create!(
       # image: parsed_recipes["image"],
