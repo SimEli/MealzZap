@@ -1,11 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<banner>
+ <div id="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path('banner.jpg') %>')">
+    <div class="title">
+      <h2>Welcome to MealzZap !</h2>
+  </div>
+ </div>
+</banner>
 
-<p>Welcome to MealzZap</p>
+<div class="container">
+  <div class="card-features-layout">
 
-<div id="backindex"><%= link_to "ALL recipes", recipes_path %></div>
-<%= link_to "Categories", categories_path %></div>
-<%= link_to "Meal planner", new_meal_planner_path %></div>
+    <div id="card-features">
+      <img src="<%= image_path('cookbooks.jpg') %>" />
+      <div class="card-features-info">
+        <h2>Store your recipes</h2>
+        <p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Natus sunt voluptate suscipit itaque, quos iste distinctio.</p>
+      </div>
+    </div>
 
+    <div id="card-features">
+      <img src="<%= image_path('planmeals.jpg') %>" />
+      <div class="card-features-info">
+        <h2>Plan your weekly meals</h2>
+        <p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Natus sunt voluptate suscipit itaque, quos iste distinctio.</p>
+      </div>
+    </div>
 
+    <div id="card-features">
+      <img src="<%= image_path('digital.jpg') %>" />
+      <div class="card-features-info">
+        <h2>Share your recipes</h2>
+        <p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Natus sunt voluptate suscipit itaque, quos iste distinctio.</p>
+      </div>
+    </div>
 
+    <div id="card-features">
+      <img src="<%= image_path('ingredients.jpg') %>" />
+      <div class="card-features-info">
+        <h2>Create shopping lists</h2>
+        <p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Natus sunt voluptate suscipit itaque, quos iste distinctio.</p>
+      </div>
+    </div>
+
+  </div>
+</div>

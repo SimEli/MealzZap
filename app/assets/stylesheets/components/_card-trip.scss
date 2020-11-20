@@ -41,3 +41,44 @@
 .links {
   width: 300px;
 }
+
+#card-features {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 250px;
+  // margin-top: 30px;
+  border-radius: 5px;
+  // margin-bottom: 30px;
+}
+
+#card-features > img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#card-features h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #495057;
+  text-decoration: none;
+}
+
+#card-features p {
+  font-size: 10px;
+  opacity: .7;
+  margin: 0;
+  color: #495057;
+  text-decoration: none;
+}
+
+#card-features .card-features-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+

@@ -1,5 +1,17 @@
-<h1>This is my profile</h1>
+<div class="welcome">
+  <h2>Hello </h2>
+</div>
 
-<p>I can see my recipes, my meal planner my shooping list here.
+<div class="buttons">
+  <div class="button">
+    <%= link_to "My Cookbook", "/categories" %>
+  </div>
 
-Or maybe we add links in the dropdown menu for "my recipes" "my mealplanners" my categories..??</p>
+  <div class="button">
+    <%= link_to "My Shopping List", "/shopping_lists"%>
+  </div>
+
+  <div class="button">
+    <%= link_to "My Meal Plan", "/meal_planners"%>
+  </div>
+</div>
