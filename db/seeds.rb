@@ -46,7 +46,7 @@ puts "Creating recipes..."
 # recipe = Recipe.new(pizza)
 # recipe.save
 
-#User.create! email: "admin@icloud.com", password:"123456"
+User.create! email: "admin@icloud.com", password:"123456"
 
 # CODE TO ADD BETWEEN NEW AND SAVE FOR THE IMAGES
 
