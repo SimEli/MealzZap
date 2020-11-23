@@ -39,7 +39,6 @@ task :get_vegetarian_recipes_from_api do
     #response = Net::HTTP.get_response(URI.parse(parsed_recipes["image"]))
     #file = StringIO.new(response.body)
 
-
     parsed_recipes["extendedIngredients"].count.times do |p|
       p ingredient = Ingredient.create!(
         name: parsed_recipes["extendedIngredients"][p - 1]["name"]
@@ -52,7 +51,6 @@ task :get_vegetarian_recipes_from_api do
       )
     end
 
-p recipe.image.attach(io: file, filename: "image.jpg")
-
+      p recipe.image.attach(io: file, filename: "image.jpg")
   end
 end
