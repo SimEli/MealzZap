@@ -1,16 +1,19 @@
-class CategoriesController < ApplicationController
+class UserCategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @category = Category.all
   end
 
-   def show
-    @category = Category.find(params[:id])
-    @recipes = @category.recipes
+  def my_index
+    @categories = current_user.categories
+    render :index
+  end
 
-   end
+  def show
+    @category = Category.find(params[:id])
+  end
 
   def new
-    @categories = Category.new
+    @category = Category.new
   end
 
   def create
@@ -37,14 +40,11 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name)
-    # :public, :image
-
+    params.require(:category).permit(:name, :image)
+    # :public
   end
 
   def category_find
-    @category = Category.find(params[:id])
+    @category = Recipe.find(params[:id])
   end
-
 end
-
