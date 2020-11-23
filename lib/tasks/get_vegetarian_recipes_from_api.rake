@@ -1,6 +1,7 @@
 desc "adding vegetarian recipes"
 
 task :get_vegetarian_recipes_from_api do
+  require "open-uri"
   url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=5&tags=vegetarian")
 
   http = Net::HTTP.new(url.host, url.port)
@@ -32,25 +33,24 @@ task :get_vegetarian_recipes_from_api do
       serves: parsed_recipes["servings"],
       user: user
     )
-
-    file = URI.open(parsed_recipes["image"])
-    recipe.image.attach(io: file, content_type: 'image/png', filename: parsed_recipes["image"])
-
-    RecipeCategory.create!(
-      recipe: recipe,
-      category: category
-    )
+    p recipe.categories << category
+    p parsed_recipes["image"]
+    p file = open(parsed_recipes["image"])
+    #response = Net::HTTP.get_response(URI.parse(parsed_recipes["image"]))
+    #file = StringIO.new(response.body)
 
     parsed_recipes["extendedIngredients"].count.times do |p|
-      ingredient = Ingredient.create!(
+      p ingredient = Ingredient.create!(
         name: parsed_recipes["extendedIngredients"][p - 1]["name"]
       )
 
-      Dose.create!(
+      p Dose.create!(
         recipe: recipe,
         ingredient: ingredient,
         quantity: parsed_recipes["extendedIngredients"][p - 1]["amount"]
       )
     end
+
+      p recipe.image.attach(io: file, filename: "image.jpg")
   end
 end

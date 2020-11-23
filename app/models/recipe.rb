@@ -5,5 +5,7 @@ class Recipe < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :recipe_categories
   has_many :categories, through: :recipe_categories
+  has_many :recipe_tags
+  has_many :tags, through: :recipe_tags
   has_one_attached :image
 end

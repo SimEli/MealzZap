@@ -22,10 +22,10 @@ task :get_desserts_recipes_from_api do
     category = Category.create!(name: "dessert")
   end
 
-  20.times do |i|
+  5.times do |i|
     parsed_recipes = parsed_response["recipes"][i - 1]
     recipe = Recipe.create!(
-      image: parsed_recipes["image"],
+      #image: parsed_recipes["image"],
       name: parsed_recipes["title"],
       description: parsed_recipes["summary"],
       cooking_time: parsed_recipes["readyInMinutes"],
@@ -33,8 +33,8 @@ task :get_desserts_recipes_from_api do
       user: user
     )
 
-    file = URI.open(parsed_recipe["image"])
-    recipe.image.attach(io: file, content_type: 'image/png')
+    file = URI.open(parsed_recipes["image"])
+    recipe.image.attach(io: file, content_type: 'image/png', filename: parsed_recipes["image"])
 
     RecipeCategory.create!(
       recipe: recipe,
