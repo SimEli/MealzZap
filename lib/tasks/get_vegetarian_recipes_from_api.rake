@@ -1,6 +1,6 @@
 desc "adding vegetarian recipes"
 
-task :get_vegetarian_recipes_from_api do
+task get_vegetarian_recipes_from_api: :environment do
   require "open-uri"
   url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=5&tags=vegetarian")
 
