@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="form">
+    <%= simple_form_for(recipe) do |f| %>
+
+      <div id="name">
+        <%= f.label :name %>
+        <div id="input">
+          <%= f.text_field :name %>
+        </div>
+      </div>
+
+      <%= f.input :image, as: :file %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+    <div class="buttons">
+      <div id="backindex"><%= link_to "Back to my Cookbook", user_recipes_path %></div>
+    </div>
+</div>

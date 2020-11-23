@@ -26,5 +26,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :user_recipes
+
+  resources :user_categories
 end
 
