@@ -13,7 +13,7 @@ class UserCategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.new
+    @user_category = Category.new
   end
 
   def create
