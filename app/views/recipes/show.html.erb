@@ -10,9 +10,48 @@
         <h5><%= @recipe.serves %></h5>
         <p><%= @recipe.preparation_time %></p>
         <p><%= @recipe.cooking_time %></p>
+        <p> <ul>
+          <% @recipe.doses.each do |dose|%>
+          <li> <%= dose.quantity %> <%= dose.ingredient.name %> </li>
+          <% end %>
+          </ul>
+        </p>
+        <p> <ol>
+          <% @recipe.recipe_steps.each do |recipe_step|%>
+          <li> <%= recipe_step.step %> </li>
+          <% end %>
+          </ol>
+        </p>
       </div>
     </div>
   </div>
+
+
+  <% if @recipe.user == current_user %>
+    <div class="form">
+      <%= simple_form_for([@recipe,Dose.new]) do |f| %>
+        <div id="quantity">
+          <%= f.input :quantity %>
+          <div id="input">
+            <%= f.input :ingredient_id, collection: Ingredient.all %>
+          </div>
+        </div>
+        <%= f.submit %>
+        <% end %>
+    </div>
+
+    <div class="form">
+      <%= simple_form_for([@recipe,RecipeStep.new]) do |f| %>
+        <div id="quantity">
+          <%= f.input :step %>
+        </div>
+        <%= f.submit %>
+        <% end %>
+    </div>
+  <% end %>
+
+
+
 
   <div class="links-to">
     <div class="buttons">

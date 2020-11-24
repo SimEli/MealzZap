@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :recipes do [:index, :show, :create, :new, :edit, :update]
     resources :doses
+    resources :recipe_steps
+
     # resources :recipe_categories
   end
   get 'my_cookbook', to: "recipes#my_index"
@@ -20,8 +22,9 @@ Rails.application.routes.draw do
 
   resources :meal_planners_recipes
   # end
+  resources :tags
 
-   resources :user_shopping_lists
+  resources :user_shopping_lists
 
   #resources :doses_shopping_lists
 
