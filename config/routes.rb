@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   resources :user_meal_planners
 
   resources :meal_planners
-  #   resources :meal_planners_recipes
+
+
+  resources :meal_planners_recipes
   # end
   resources :tags
 

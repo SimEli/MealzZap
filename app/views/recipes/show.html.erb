@@ -26,6 +26,7 @@
     </div>
   </div>
 
+
   <% if @recipe.user == current_user %>
     <div class="form">
       <%= simple_form_for([@recipe,Dose.new]) do |f| %>
@@ -51,6 +52,7 @@
 
 
 
+
   <div class="links-to">
     <div class="buttons">
         <%# <div id="booknow"><%= link_to "Book", new_recipe_booking_path(@recipe) %></div> %>
@@ -58,5 +60,4 @@
         <div id="editbtn"><%= link_to "Edit", edit_recipe_path(@recipe) %></div>
     </div>
   </div>
-</div>
 
