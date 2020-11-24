@@ -51,6 +51,6 @@ task get_vegetarian_recipes_from_api: :environment do
       )
     end
 
-      p recipe.image.attach(io: file, filename: "image.jpg")
+    # p recipe.image.attach(io: file, filename: "image.jpg")
   end
 end
