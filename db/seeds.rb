@@ -8,21 +8,21 @@
 
 # CODE TO UNCOMMENT WHEN CLOUDINARY READY
 
-require "open-uri"
+# require "open-uri"
 
-puts "Creating recipes..."
- #Recipe.destroy_all
+# puts "Creating recipes..."
+#  #Recipe.destroy_all
 
- chicken = {
-   user_id: 1,
-   name: "Chicken souvlaki",
-   description: "Chicken pita",
-   preparation_time: "35 min",
-   cooking_time: "30 min",
-   serves: 5,
- }
- recipe = Recipe.new(chicken)
- recipe.save
+#  chicken = {
+#    user_id: 1,
+#    name: "Chicken souvlaki",
+#    description: "Chicken pita",
+#    preparation_time: "35 min",
+#    cooking_time: "30 min",
+#    serves: 5,
+#  }
+#  recipe = Recipe.new(chicken)
+#  recipe.save
 
 # pancakes = {
 #   user_id: 1,
@@ -46,14 +46,23 @@ puts "Creating recipes..."
 # recipe = Recipe.new(pizza)
 # recipe.save
 
-User.create! email: "admin@icloud.com", password:"123456"
+# User.create! email: "admin@icloud.com", password:"123456"
 
 # CODE TO ADD BETWEEN NEW AND SAVE FOR THE IMAGES
 
- file = URI.open('https://spoonacular.com/recipeImages/716217-556x370.jpg')
+#  file = URI.open('https://spoonacular.com/recipeImages/716217-556x370.jpg')
 # recipe = Recipe.new(chicken_curry)
- recipe.image.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+#  recipe.image.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 # recipe.save
+# Recipe.destroy_all
+# User.last.destroy
+
+# simon = User.create! username: "siomm", email: "gggg@gmail.com", password: "123456" 
+# p simon
+
+shopping_list = ShoppingList.last
+dose = Dose.last
+dose_shopping_list = DosesShoppingList.create!(shopping_list_id: shopping_list.id, dose_id: dose.id)
 
 puts "Finished!"
 
