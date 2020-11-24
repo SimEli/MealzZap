@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_135006) do
+ActiveRecord::Schema.define(version: 2020_11_23_162246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,14 @@ ActiveRecord::Schema.define(version: 2020_11_20_135006) do
     t.index ["recipe_id"], name: "index_recipe_categories_on_recipe_id"
   end
 
+  create_table "recipe_steps", force: :cascade do |t|
+    t.text "step"
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_recipe_steps_on_recipe_id"
+  end
+
   create_table "recipe_tags", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -128,13 +136,13 @@ ActiveRecord::Schema.define(version: 2020_11_20_135006) do
     t.index ["user_id"], name: "index_shopping_lists_on_user_id"
   end
 
-  create_table "user_categories", force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "user_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -148,6 +156,15 @@ ActiveRecord::Schema.define(version: 2020_11_20_135006) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["meal_planner_id"], name: "index_user_meal_planners_on_meal_planner_id"
     t.index ["user_id"], name: "index_user_meal_planners_on_user_id"
+  end
+
+  create_table "user_recipe_categories", force: :cascade do |t|
+    t.bigint "recipe_id", null: false
+    t.bigint "user_category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_user_recipe_categories_on_recipe_id"
+    t.index ["user_category_id"], name: "index_user_recipe_categories_on_user_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -170,10 +187,13 @@ ActiveRecord::Schema.define(version: 2020_11_20_135006) do
   add_foreign_key "meal_planner_recipes", "recipes"
   add_foreign_key "recipe_categories", "categories"
   add_foreign_key "recipe_categories", "recipes"
+  add_foreign_key "recipe_steps", "recipes"
   add_foreign_key "recipes", "users"
   add_foreign_key "reviews", "recipes"
   add_foreign_key "reviews", "users"
   add_foreign_key "shopping_lists", "users"
   add_foreign_key "user_meal_planners", "meal_planners"
   add_foreign_key "user_meal_planners", "users"
+  add_foreign_key "user_recipe_categories", "recipes"
+  add_foreign_key "user_recipe_categories", "user_categories"
 end
