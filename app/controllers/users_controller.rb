@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 skip_before_action :authenticate_user!, only: [:index]
 
-  # def index
-  #   @users = User.all
-  # end
+  def index
+    @users = current_user.username
+  end
 
   # def new
   #   @user = User.new
