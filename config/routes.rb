@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # end
   resources :tags
 
-  resources :user_shopping_lists
+  resources :shopping_lists
 
   #resources :doses_shopping_lists
 
