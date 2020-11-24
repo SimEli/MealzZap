@@ -1,0 +1,9 @@
+<h1><%=  @meal_planner.name %></h1>
+
+<% @recipes.each do |recipe| %>
+
+  <h3> <%= link_to recipe.name, recipe_path(recipe) %></h3>
+  <p> <%= recipe.description %> </p>
+<% end %>
+
+

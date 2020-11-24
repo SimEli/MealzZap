@@ -8,4 +8,5 @@ class Recipe < ApplicationRecord
   has_many :recipe_tags
   has_many :tags, through: :recipe_tags
   has_one_attached :image
+  #has_many :meal_planners, through: :meal_planner_recipes
 end

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="title">
+    <h1>Meal plan recipes</h1>
+  </div>
+<div class="cards">
+    <% @meal_planner_recipes.each do |meal_planner_recipes| %>
+      <%= link_to meal_planners_recipe_path(meal_planner),class: "links" do %>
+        <div class="card-meal">
+
+          <div class="card-meal-infos">
+            <div>
+            <%# WE CAN ADD A FIELD --> ADDED BY 'USER' so when it goes public we know who posted it %>
+              <h2><%= @meal_planner_recipes.name %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

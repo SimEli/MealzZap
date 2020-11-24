@@ -1,9 +1,12 @@
 class MealPlannersController < ApplicationController
   def index
-    @recipe = Recipe.all
+    @meal_planners = MealPlanner.all
   end
 
   def show
-    @recipe = recipe.find(params[:id])
+    @meal_planner = MealPlanner.find(params[:id])
+    @recipes = @meal_planner.recipes
+
+
   end
 end

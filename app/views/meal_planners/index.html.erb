@@ -1,4 +1,14 @@
+<div class="container">
+  <div class="title">
+    <h1>Meal Planning</h1>
+  </div>
+  <div class="cards">
+    <% @meal_planners.each do |meal_planner| %>
+      <%= link_to meal_planner.name, meal_planner_path(meal_planner) %>
+    <% end %>
+  </div>
+</div>
 
-    <h1>Meal planner</h1>
 
+<%= link_to "Back to homepage", root_path %>
 
