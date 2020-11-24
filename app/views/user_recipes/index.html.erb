@@ -1,4 +1,23 @@
-<h3>My Cookbook is empty</h3>
+<div class="container">
+  <div class="title">
+    <h1>My CookBook</h1>
+  </div>
+<div class="cards">
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe),class: "links" do %>
+        <div class="card-recipe">
+          <%= cl_image_tag recipe.image.key, height: 400, width: 300, crop: :fill if recipe.image.attached?%>
+          <div class="card-recipe-infos">
+            <div>
+            <%# WE CAN ADD A FIELD --> ADDED BY 'USER' so when it goes public we know who posted it %>
+              <h2><%= recipe.name %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 <div class="buttons">
   <div class="button">
