@@ -166,13 +166,13 @@ MealPlanner.destroy_all
 #nina = User.create! email: "ninuel@yandex.ru", password: "1234567"
 
 meal_plans = MealPlanner.create!([
-  {name: "Plan 1"},
-  {name: "Plan 2"},
-  {name: "Plan 3"}
+  {name: "Plan 1", category: "Fish"},
+  {name: "Plan 2", category: "Meat"},
+  {name: "Plan 3", category: "Vegetarian"}
 ])
 
 pudding = Recipe.create!(
-  #tag: "Breakfast",
+  tags: "Breakfast",
   name: "Coconut-Chia Pudding Breakfast Bowl",
   description: "Stir together the coconut milk, chia seeds and maple syrup in a cereal bowl. Refrigerate overnight, covered, to allow the seeds to plump and the mixture to thicken into a loose pudding.",
   cooking_time: "10 min",
@@ -182,7 +182,7 @@ pudding = Recipe.create!(
 
 
 fish = Recipe.create!(
-  #tag: "Lunch"
+  tags: "Lunch",
   name: "Sweet pea fish pie",
   description: "Traditionally, fish pies have always been about stretching fish a long way, and by using quality frozen fish fillets",
   cooking_time: "1h 30 min",
@@ -192,7 +192,7 @@ fish = Recipe.create!(
 
 
 pasta = Recipe.create!(
-  #tag: "Dinner"
+  tags: "Dinner",
   name: "Salmon and broccoli pasta",
   description: "This recipe makes two generous servings or three lighter meals. It’s also very easy to double up.",
   cooking_time: "15 min",
@@ -201,7 +201,7 @@ pasta = Recipe.create!(
   user_id: User.second.id)
 
  berry = Recipe.create!(
-  #tag: "Breakfast"
+  tags: "Breakfast",
   name: "Double Berry Breakfast Parfaits",
   description: "Super quick to make, full of protein and fiber, and naturally sweet, they are perfect for the morning or an afternoon snack and a wonderful post-workout treat!",
   cooking_time: "10 min",
@@ -211,7 +211,7 @@ pasta = Recipe.create!(
 
 
  chicken = Recipe.create!(
-  #tag: "Lunch"
+  tags: "Lunch",
   name: "Creamy chicken stew",
   description: "Cook this creamy, comforting stew to serve with our smashed mini jacket potatoes. This warming one-pot with chicken, peas and leeks is perfect for a special family meal.",
   cooking_time: "55 min",
@@ -221,7 +221,7 @@ pasta = Recipe.create!(
 
 
  soup = Recipe.create!(
-  #tag: "Dinner"
+  tags: "Dinner",
   name: "Meatball & tomato soup",
   description: "Get three of your 5-a-day in one serving with this healthy, low-calorie tomato soup. The addition of meatballs and giant couscous means it's filling, too",
   cooking_time: "15 min",
@@ -231,7 +231,7 @@ pasta = Recipe.create!(
 
 
  omelette = Recipe.create!(
-  #tag: "Breakfast"
+  tags: "Breakfast",
   name: "Basic omelette",
   description: "Tasty breakfast in no time.",
   cooking_time: "10 min",
@@ -240,7 +240,7 @@ pasta = Recipe.create!(
   user_id: User.second.id)
 
  rice = Recipe.create!(
-  #tag: "Lunch"
+  tags: "Lunch",
   name: "Extra Vegetable Fried Rice",
   description: " This vegetarian recipe features extra vegetables and brown rice. ",
   cooking_time: "15 min",
@@ -249,7 +249,7 @@ pasta = Recipe.create!(
   user_id: User.second.id)
 
  pumpkin = Recipe.create!(
-  #tag: "Dinner"
+  tags: "Dinner",
   name: "Pumpkin soup",
   description: "This creamy pumpkin soup recipe is a definite crowd pleaser.",
   cooking_time: "25 min",
@@ -266,7 +266,7 @@ meal_planner_recipe = MealPlannerRecipe.create([
   { meal_planner_id: meal_plans.second.id, recipe_id: soup.id },
   { meal_planner_id: meal_plans.third.id, recipe_id: omelette.id },
   { meal_planner_id: meal_plans.third.id, recipe_id: rice.id },
-  { meal_planner_id: meal_plans.third.id, recipe_id: Recipe.first.id }
+  { meal_planner_id: meal_plans.third.id, recipe_id: pumpkin.id }
 ])
 
 
@@ -288,12 +288,12 @@ ingredients = Ingredient.create([
 # Recipe.destroy_all
 # User.last.destroy
 
-# simon = User.create! username: "siomm", email: "gggg@gmail.com", password: "123456" 
+# simon = User.create! username: "siomm", email: "gggg@gmail.com", password: "123456"
 # p simon
 
-shopping_list = ShoppingList.last
-dose = Dose.last
-dose_shopping_list = DosesShoppingList.create!(shopping_list_id: shopping_list.id, dose_id: dose.id)
+#shopping_list = ShoppingList.last
+#dose = Dose.last
+#dose_shopping_list = DosesShoppingList.create!(shopping_list_id: shopping_list.id, dose_id: dose.id)
 
 p MealPlannerRecipe.all
 puts "Finished!"

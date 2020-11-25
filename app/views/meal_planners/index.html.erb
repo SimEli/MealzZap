@@ -2,9 +2,10 @@
   <div class="title">
     <h1>Meal Planning</h1>
   </div>
-  <div class="cards">
+  <div class="">
     <% @meal_planners.each do |meal_planner| %>
-      <%= link_to meal_planner.name, meal_planner_path(meal_planner) %>
+       <h3><%= link_to meal_planner.name, meal_planner_path(meal_planner) %></h3>
+      <h5><%= meal_planner.category %></h5>
     <% end %>
   </div>
 </div>
