@@ -7,17 +7,17 @@
     <% @meal_planners.each do |meal_planner| %>
       <%= link_to meal_planner_path(meal_planner) do %>
         <div class="meal_planner_cards">
-          <%= meal_planner.name %>
-            <h5><%= meal_planner.category %></h5>
-            <% meal_planner.recipes.each do |recipe| %>
-              <div class="card-recipe">
-                <%= recipe.name %>
-              </div>
-            <% end %>
+          <h2><%= meal_planner.name %></h2>
+          <h5>
+            <%= meal_planner.category %>
+          </h5>
+          <% meal_planner.recipes.each do |recipe| %>
+            <div class="card-recipe">
+              <%= recipe.name %>
+            </div>
+          <% end %>
         </div>
       <% end %>
-
     <% end %>
   </div>
-
 </div>
