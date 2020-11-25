@@ -6,8 +6,8 @@
       </div>
       <div id="text">
         <h2><%= @recipe.name %></h2>
-        <h4><%= @recipe.description %></h4>
-        <h5><%= @recipe.serves %></h5>
+        <p><%= @recipe.description.html_safe %></p>
+        <h5><%#= @recipe.serves %></h5>
         <p><%= @recipe.preparation_time %></p>
         <p><%= @recipe.cooking_time %></p>
         <p> <ul>

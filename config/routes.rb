@@ -6,14 +6,12 @@ Rails.application.routes.draw do
     resources :doses
     resources :recipe_steps
 
-    # resources :recipe_categories
+
   end
   get 'my_cookbook', to: "recipes#my_index"
-  # resources :ingredients
+
 
   resources :categories
-
-  resources :reviews
 
   resources :meal_planners
 
@@ -22,17 +20,17 @@ Rails.application.routes.draw do
 
 
   resources :meal_planners_recipes
-  # end
+
   resources :tags
 
   resources :shopping_lists
 
-  #resources :doses_shopping_lists
+
 
   resources :users
 
   resources :user_recipes
 
-  resources :user_categories
+
 end
 
