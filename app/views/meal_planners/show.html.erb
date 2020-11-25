@@ -1,4 +1,5 @@
 
+
 <div class="container">
   <h1><%=  @meal_planner.name %></h1>
   <% @recipes.each do |recipe| %>
@@ -7,3 +8,4 @@
   <p> <%= recipe.description.html_safe %> </p>
   <% end %>
 </div>
+
