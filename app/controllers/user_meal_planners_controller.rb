@@ -10,13 +10,14 @@ class UserMealPlannersController < ApplicationController
 
   def new
     @user_meal_planner = UserMealPlanner.new
+
   end
 
   def create
-    @user_meal_planner = UserMealPlanner.create(user_meal_planner_params)
+    @user_meal_planner = UserMealPlanner.create(meal_planner_id: params[:meal_planner_id])
     @user_meal_planner.user = current_user
     if @user_meal_planner.save!
-      redirect_to user_meal_planner_path(@user_meal_planner)
+      redirect_to user_meal_planners_path
     else
       render "user_meal_planners/new"
     end
