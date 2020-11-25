@@ -14,9 +14,10 @@ class UserMealPlannersController < ApplicationController
   end
 
   def create
-    @user_meal_planner = UserMealPlanner.create(meal_planner_id: params[:meal_planner_id])
-    @user_meal_planner.user = current_user
-    if @user_meal_planner.save!
+    @meal_planner = MealPlanner.find(params[:meal_planner_id])
+
+    if current_user.user_meal_planners.create(meal_planner: @meal_planner)
+
       redirect_to user_meal_planners_path
     else
       render "user_meal_planners/new"
@@ -34,10 +35,14 @@ class UserMealPlannersController < ApplicationController
     end
   end
 
+  #def add_plan(meal_planner_recipe)
+
+  #end
+
   private
 
   def user_meal_planner_params
-    params.require(:user_meal_planner).permit(:serves)
+    params.require(:meal_planner).permit(:serves)
     # :public
   end
 
