@@ -1,7 +1,11 @@
-<h1><%=  @meal_planner.name %></h1>
 
-<% @recipes.each do |recipe| %>
 
-  <h3> <%= link_to recipe.name, recipe_path(recipe) %></h3>
-  <p> <%= recipe.description %> </p>
-<% end %>
+<div class="container">
+  <h1><%=  @meal_planner.name %></h1>
+  <% @recipes.each do |recipe| %>
+    <h2><%= recipe.tags %></h2>
+    <h3> <%= link_to recipe.name, recipe_path(recipe) %></h3>
+  <p> <%= recipe.description.html_safe %> </p>
+  <% end %>
+</div>
+

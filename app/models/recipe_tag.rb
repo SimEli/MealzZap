@@ -1,4 +1,4 @@
 class RecipeTag < ApplicationRecord
-  belongs_to :recipe
-  belongs_to :tag
+  #belongs_to :recipe
+  #belongs_to :tag
 end

@@ -8,6 +8,7 @@
       <%= link_to meal_planner_path(meal_planner) do %>
         <div class="meal_planner_cards">
           <%= meal_planner.name %>
+            <h5><%= meal_planner.category %></h5>
             <% meal_planner.recipes.each do |recipe| %>
               <div class="card-recipe">
                 <%= recipe.name %>
@@ -15,6 +16,7 @@
             <% end %>
         </div>
       <% end %>
+
     <% end %>
   </div>
 
