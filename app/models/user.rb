@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_many :recipes
   has_many :shopping_lists
+  has_many :user_meal_planners
 
   after_create :create_shopping_list
 

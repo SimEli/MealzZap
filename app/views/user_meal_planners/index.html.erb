@@ -1,5 +1,27 @@
+<div class="container">
+  <div class="title">
+    <h1>My Meal Plans</h1>
+  </div>
 
-    <h3>My meal planner is empty</h3>
+  <div class="meal_planner">
+    <% @user_meal_planners.each do |user_meal_planner| %>
+      <%= link_to meal_planner_path(user_meal_planner.meal_planner) do %>
+        <div class="meal_planner_cards">
+          <%= user_meal_planner.meal_planner.name %>
+            <h5><%= user_meal_planner.meal_planner.category %></h5>
+            <% user_meal_planner.meal_planner.recipes.each do |recipe| %>
+              <div class="card-recipe">
+                <%= recipe.name %>
+              </div>
+            <% end %>
+        </div>
+      <% end %>
+
+    <% end %>
+  </div>
+
+</div>
+
 
 <div><%= link_to "Go back to my profile", users_path %></div>
 
