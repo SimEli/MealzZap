@@ -1,11 +1,11 @@
-
-
 <div class="container">
-  <h1><%=  @meal_planner.name %></h1>
+  <h1><%= @meal_planner.name %></h1>
   <% @recipes.each do |recipe| %>
-    <h2><%= recipe.tags %></h2>
-    <h3> <%= link_to recipe.name, recipe_path(recipe) %></h3>
-  <p> <%= recipe.description.html_safe %> </p>
+    <div class="plan_show_cards">
+      <h2><%= recipe.tags %></h2>
+      <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
+      <p><%= recipe.description.html_safe %></p>
+    </div>
   <% end %>
+  <h4><%= button_to 'Add to my meal plan', user_meal_planners_path(params: {meal_planner_id: @meal_planner}), method: :post %></h4>
 </div>
-

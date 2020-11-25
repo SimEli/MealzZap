@@ -11,7 +11,8 @@ class User < ApplicationRecord
   has_many :recipes
   has_one :shopping_list
   has_many :doses_shopping_list, through: :shopping_list
-
+  has_many :user_meal_planners
+  
   after_create :create_shopping_list
 
   def create_shopping_list

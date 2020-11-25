@@ -1,8 +1,45 @@
+.meal_planner {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
 .meal_planner_cards {
   width: full;
-  height: 250px;
+  height: 400px;
   background-color: white;
   margin: 20px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-attachment: white;
+  padding: 30px;
+
+  .title_category {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h2{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  #category {
+    background-color: #F3800D;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+  }
+
+  .card-recipes {
+    padding: 20px;
+    box-shadow: none;
+    display: flex;
+  }
+
+  .card-recipe {
+    padding: 15px;
+    margin: 15px;
+  }
 }
