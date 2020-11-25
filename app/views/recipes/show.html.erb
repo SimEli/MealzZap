@@ -27,7 +27,7 @@
   </div>
 
 
-  <% if @recipe.user == current_user %>
+  <% #if @recipe.user == current_user %>
     <div class="form">
       <%= simple_form_for([@recipe,Dose.new]) do |f| %>
         <div id="quantity">
@@ -37,7 +37,7 @@
           </div>
         </div>
         <%= f.submit %>
-        <% end %>
+        <%# end %>
     </div>
 
     <div class="form">

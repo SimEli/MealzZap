@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :recipe_find, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!
   def index
     @recipes = Recipe.all
   end
@@ -40,7 +40,8 @@ class RecipesController < ApplicationController
   end
 
   def add_shopping_list
-    current_user.shopping_lists.last.doses << @recipe.doses
+    @recipe = Recipe.find(params[:recipe_id])
+    current_user.shopping_list.doses << @recipe.doses
     redirect_to recipe_path(@recipe)
   end
 

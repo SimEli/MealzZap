@@ -1,10 +1,10 @@
 class ShoppingListsController < ApplicationController
 
-  def index
-    @user = current_user
-    @shopping_lists = current_user.shopping_lists.first
+  # def index
+  #   @user = current_user
+  #   @shopping_lists = current_user.shopping_lists.first
 
-  end
+  # end
 
   def show
     @user = current_user

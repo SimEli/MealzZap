@@ -9,7 +9,8 @@ class User < ApplicationRecord
   validates :username, presence: true
 
   has_many :recipes
-  has_many :shopping_lists
+  has_one :shopping_list
+  has_many :doses_shopping_list, through: :shopping_list
 
   after_create :create_shopping_list
 
