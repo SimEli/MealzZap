@@ -2,6 +2,8 @@
   display: flex;
   color: white;
   text-decoration: none;
+  margin-bottom: 30px;
+  margin-top: 30px;
   a {
     text-decoration: none;
     color: white;
@@ -11,14 +13,14 @@
 .button {
   margin-left: 20px;
   color: white;
-  background-color: #121449;
+  background-color: #01676D;
   padding: 8px 10px;
   border-radius: 4px;
   text-decoration: none;
 }
 
 .button:hover {
-  background-color: #F88CA5;
+  background-color: #F3800D;
   transition-duration: 0.4s;
   text-decoration: none;
 }
