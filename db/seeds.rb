@@ -1,17 +1,24 @@
-# # This file should contain all the record creation needed to seed the database with its default values.
-# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-# #
-# # Examples:
-# #
-# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-# #   Character.create(name: 'Luke', movie: movies.first)
-
-# # CODE TO UNCOMMENT WHEN CLOUDINARY READY
-
 # require "open-uri"
 
 # puts "Creating recipes..."
 #  #Recipe.destroy_all
+#  chicken = {
+#    user_id: 1,
+#    name: "Chicken souvlaki",
+#    description: "Chicken pita",
+#    preparation_time: "35 min",
+#    cooking_time: "30 min",
+#    serves: 5,
+#  }
+#  recipe = Recipe.new(chicken)
+#  recipe.save
+
+# pancakes = {
+#   user_id: 1,
+#   name: "pancakes with chocolate",
+#   description: "tasty",
+#   preparation_time: "35 min",
+#   cooking_time: "30 min",
 MealPlanner.destroy_all
 #User.destroy_all
 # pudding = {
@@ -122,6 +129,14 @@ MealPlanner.destroy_all
 # recipe = Recipe.new(chicken)
 # recipe.save
 
+
+# User.create! email: "admin@icloud.com", password:"123456"
+
+# CODE TO ADD BETWEEN NEW AND SAVE FOR THE IMAGES
+
+#  file = URI.open('https://spoonacular.com/recipeImages/716217-556x370.jpg')
+# recipe = Recipe.new(chicken_curry)
+#  recipe.image.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 # soup = {
 #   tag: "Lunch"
 #   name: "Meatball & tomato soup",
@@ -157,7 +172,7 @@ meal_plans = MealPlanner.create!([
 ])
 
 pudding = Recipe.create!(
-  #tag: "breakfast",
+  #tag: "Breakfast",
   name: "Coconut-Chia Pudding Breakfast Bowl",
   description: "Stir together the coconut milk, chia seeds and maple syrup in a cereal bowl. Refrigerate overnight, covered, to allow the seeds to plump and the mixture to thicken into a loose pudding.",
   cooking_time: "10 min",
@@ -185,17 +200,81 @@ pasta = Recipe.create!(
   serves: 2,
   user_id: User.second.id)
 
+ berry = Recipe.create!(
+  #tag: "Breakfast"
+  name: "Double Berry Breakfast Parfaits",
+  description: "Super quick to make, full of protein and fiber, and naturally sweet, they are perfect for the morning or an afternoon snack and a wonderful post-workout treat!",
+  cooking_time: "10 min",
+  preparation_time: "10 min",
+  serves: 2,
+  user_id: User.second.id)
 
+
+ chicken = Recipe.create!(
+  #tag: "Lunch"
+  name: "Creamy chicken stew",
+  description: "Cook this creamy, comforting stew to serve with our smashed mini jacket potatoes. This warming one-pot with chicken, peas and leeks is perfect for a special family meal.",
+  cooking_time: "55 min",
+  preparation_time: "10 min",
+  serves: 6,
+  user_id: User.second.id)
+
+
+ soup = Recipe.create!(
+  #tag: "Dinner"
+  name: "Meatball & tomato soup",
+  description: "Get three of your 5-a-day in one serving with this healthy, low-calorie tomato soup. The addition of meatballs and giant couscous means it's filling, too",
+  cooking_time: "15 min",
+  preparation_time: "5 min",
+  serves: 4,
+  user_id: User.second.id)
+
+
+ omelette = Recipe.create!(
+  #tag: "Breakfast"
+  name: "Basic omelette",
+  description: "Tasty breakfast in no time.",
+  cooking_time: "10 min",
+  preparation_time: "10 min",
+  serves: 1,
+  user_id: User.second.id)
+
+ rice = Recipe.create!(
+  #tag: "Lunch"
+  name: "Extra Vegetable Fried Rice",
+  description: " This vegetarian recipe features extra vegetables and brown rice. ",
+  cooking_time: "15 min",
+  preparation_time: "20 min",
+  serves: 3,
+  user_id: User.second.id)
+
+ pumpkin = Recipe.create!(
+  #tag: "Dinner"
+  name: "Pumpkin soup",
+  description: "This creamy pumpkin soup recipe is a definite crowd pleaser.",
+  cooking_time: "25 min",
+  preparation_time: "30 min",
+  serves: 4,
+  user_id: User.second.id)
 
 meal_planner_recipe = MealPlannerRecipe.create([
   { meal_planner_id: meal_plans.first.id, recipe_id: pudding.id },
-  {meal_planner_id: meal_plans.first.id, recipe_id: fish.id},
-  {meal_planner_id: meal_plans.first.id, recipe_id: pasta.id}
+  { meal_planner_id: meal_plans.first.id, recipe_id: fish.id },
+  { meal_planner_id: meal_plans.first.id, recipe_id: pasta.id },
+  { meal_planner_id: meal_plans.second.id, recipe_id: berry.id },
+  { meal_planner_id: meal_plans.second.id, recipe_id: chicken.id },
+  { meal_planner_id: meal_plans.second.id, recipe_id: soup.id },
+  { meal_planner_id: meal_plans.third.id, recipe_id: omelette.id },
+  { meal_planner_id: meal_plans.third.id, recipe_id: rice.id },
+  { meal_planner_id: meal_plans.third.id, recipe_id: Recipe.first.id }
 ])
 
 
 
+ingredients = Ingredient.create([
+{name: "brown rice" },
 
+])
 
 
 
@@ -206,6 +285,15 @@ meal_planner_recipe = MealPlannerRecipe.create([
 # recipe = Recipe.new(chicken_curry)
  #recipe.image.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 # recipe.save
+# Recipe.destroy_all
+# User.last.destroy
+
+# simon = User.create! username: "siomm", email: "gggg@gmail.com", password: "123456" 
+# p simon
+
+shopping_list = ShoppingList.last
+dose = Dose.last
+dose_shopping_list = DosesShoppingList.create!(shopping_list_id: shopping_list.id, dose_id: dose.id)
 
 p MealPlannerRecipe.all
 puts "Finished!"

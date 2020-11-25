@@ -15,16 +15,17 @@ Rails.application.routes.draw do
 
   resources :reviews
 
+  resources :meal_planners
+
   resources :user_meal_planners
 
-  resources :meal_planners
 
 
   resources :meal_planners_recipes
   # end
   resources :tags
 
-  resources :user_shopping_lists
+  resources :shopping_lists
 
   #resources :doses_shopping_lists
 

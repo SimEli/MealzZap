@@ -1,0 +1,12 @@
+<h1>Shopping List</h1>
+
+<%= @shopping_list %>
+
+<h3>List of Items</h3>
+
+  
+  <% @doses.each do |dose| %>
+    <h4><%= dose.ingredient.name %></h4>
+    
+  <% end %>
+  

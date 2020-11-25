@@ -8,4 +8,13 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :username, presence: true
 
-end  
+  has_many :recipes
+  has_many :shopping_lists
+
+  after_create :create_shopping_list
+
+  def create_shopping_list
+    ShoppingList.create(user: self)
+  end
+end
+
