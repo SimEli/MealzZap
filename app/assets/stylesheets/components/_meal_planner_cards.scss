@@ -1,3 +1,9 @@
+.meal_planner {
+  a {
+    text-decoration: none;
+  }
+}
+
 .meal_planner_cards {
   width: full;
   height: 250px;
@@ -5,4 +11,11 @@
   margin: 20px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-attachment: white;
+
+  h2{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
 }
