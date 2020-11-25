@@ -1,4 +1,5 @@
 class MealPlannersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @meal_planners = MealPlanner.all
   end
