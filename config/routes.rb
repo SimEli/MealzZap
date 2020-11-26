@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :recipes do [:index, :show, :create, :new, :edit, :update]
     resources :doses
     resources :recipe_steps
-
+    post 'add_recipe_shopping_list', to: "recipes#add_shopping_list", as: "add_shopping_list"
 
   end
   get 'my_cookbook', to: "recipes#my_index"
@@ -17,15 +17,11 @@ Rails.application.routes.draw do
 
   resources :user_meal_planners
 
-
-
   resources :meal_planners_recipes
 
   resources :tags
 
   resources :shopping_lists
-
-
 
   resources :users
 
