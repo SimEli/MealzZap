@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <% #if @recipe.user == current_user %>
+  <%# if @recipe.user == current_user %>
     <div class="form">
       <%= simple_form_for([@recipe,Dose.new]) do |f| %>
         <div id="quantity">
@@ -48,6 +48,7 @@
         </div>
         <%= f.submit %>
       <% end %>
+
     </div>
 
     <div class="form">
@@ -58,7 +59,8 @@
         <%= f.submit %>
       <% end %>
     </div>
-  <% # end %>
+  <%# end %>
+
 
   <div class="buttons">
     <div class="button"><%= link_to "Back to recipes", recipes_path %></div>
