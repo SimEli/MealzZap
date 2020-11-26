@@ -1,49 +1,14 @@
 <div class="container">
-  <div class="form">
+  <div class="my_form">
     <%= simple_form_for(recipe) do |f| %>
-      <div id="name">
-        <%= f.label :name %>
-        <div id="input">
-          <%= f.text_field :name %>
-        </div>
-      </div>
-      <div id="description">
-        <%= f.label :description %>
-        <div id="input">
-          <%= f.text_field :description %>
-        </div>
-      </div>
-      <%# CREATION OF SELECT MENU TAGS %>
-      <%# <div id="tags">
-        <div id="input">
-
-          <%#= f.input :tags, :collection => %w[Breakfast Lunch Dinner Dessert] %>
-        <%# </div> %>
-      <%# </div> %> TAG HERE AFTER %>
-
-      <div id="preparation_time">
-        <%= f.label :preparation_time %>
-        <div id="input">
-          <%= f.text_field :preparation_time %>
-        </div>
-      </div>
-      <div id="cooking_time">
-        <%= f.label :cooking_time %>
-        <div id="input">
-          <%= f.text_field :cooking_time %>
-        </div>
-      </div>
-      <div id="serves">
-        <%= f.label :serves %>
-        <div id="input">
-          <%= f.text_field :serves %>
-        </div>
-      </div>
-        <%= f.input :image, as: :file %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :cooking_time %>
+      <%= f.input :preparation_time %>
+      <%= f.input :serves %>
+      <%= f.input :image, as: :file %>
       <%= f.submit %>
     <% end %>
-  </div>
-
     <div class="buttons">
       <div class="button"><%= link_to "Back to my Cookbook", user_recipes_path %></div>
     </div>

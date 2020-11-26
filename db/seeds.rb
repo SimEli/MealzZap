@@ -176,8 +176,8 @@ pudding = Recipe.create!(
   tags: "Breakfast",
   name: "Coconut-Chia Pudding Breakfast Bowl",
   description: "Stir together the coconut milk, chia seeds and maple syrup in a cereal bowl. Refrigerate overnight, covered, to allow the seeds to plump and the mixture to thicken into a loose pudding.",
-  cooking_time: "10 min",
-  preparation_time: "10 min",
+  cooking_time: "10",
+  preparation_time: "10",
   serves: 4,
   user_id: User.second.id)
 
@@ -186,8 +186,8 @@ fish = Recipe.create!(
   tags: "Lunch",
   name: "Sweet pea fish pie",
   description: "Traditionally, fish pies have always been about stretching fish a long way, and by using quality frozen fish fillets",
-  cooking_time: "1h 30 min",
-  preparation_time: "1h 45 min",
+  cooking_time: "90",
+  preparation_time: "105",
   serves: 7,
   user_id: User.second.id)
 
@@ -196,8 +196,8 @@ pasta = Recipe.create!(
   tags: "Dinner",
   name: "Salmon and broccoli pasta",
   description: "This recipe makes two generous servings or three lighter meals. It’s also very easy to double up.",
-  cooking_time: "15 min",
-  preparation_time: "30 min",
+  cooking_time: "15",
+  preparation_time: "30",
   serves: 2,
   user_id: User.second.id)
 
@@ -205,8 +205,8 @@ pasta = Recipe.create!(
   tags: "Breakfast",
   name: "Double Berry Breakfast Parfaits",
   description: "Super quick to make, full of protein and fiber, and naturally sweet, they are perfect for the morning or an afternoon snack and a wonderful post-workout treat!",
-  cooking_time: "10 min",
-  preparation_time: "10 min",
+  cooking_time: "10",
+  preparation_time: "10",
   serves: 2,
   user_id: User.second.id)
 
@@ -215,8 +215,8 @@ pasta = Recipe.create!(
   tags: "Lunch",
   name: "Creamy chicken stew",
   description: "Cook this creamy, comforting stew to serve with our smashed mini jacket potatoes. This warming one-pot with chicken, peas and leeks is perfect for a special family meal.",
-  cooking_time: "55 min",
-  preparation_time: "10 min",
+  cooking_time: "55",
+  preparation_time: "10",
   serves: 6,
   user_id: User.second.id)
 
@@ -225,8 +225,8 @@ pasta = Recipe.create!(
   tags: "Dinner",
   name: "Meatball & tomato soup",
   description: "Get three of your 5-a-day in one serving with this healthy, low-calorie tomato soup. The addition of meatballs and giant couscous means it's filling, too",
-  cooking_time: "15 min",
-  preparation_time: "5 min",
+  cooking_time: "15",
+  preparation_time: "5",
   serves: 4,
   user_id: User.second.id)
 
@@ -235,8 +235,8 @@ pasta = Recipe.create!(
   tags: "Breakfast",
   name: "Basic omelette",
   description: "Tasty breakfast in no time.",
-  cooking_time: "10 min",
-  preparation_time: "10 min",
+  cooking_time: "10",
+  preparation_time: "10",
   serves: 1,
   user_id: User.second.id)
 
@@ -244,8 +244,8 @@ pasta = Recipe.create!(
   tags: "Lunch",
   name: "Extra Vegetable Fried Rice",
   description: " This vegetarian recipe features extra vegetables and brown rice. ",
-  cooking_time: "15 min",
-  preparation_time: "20 min",
+  cooking_time: "15",
+  preparation_time: "20",
   serves: 3,
   user_id: User.second.id)
 
@@ -253,8 +253,8 @@ pasta = Recipe.create!(
   tags: "Dinner",
   name: "Pumpkin soup",
   description: "This creamy pumpkin soup recipe is a definite crowd pleaser.",
-  cooking_time: "25 min",
-  preparation_time: "30 min",
+  cooking_time: "25",
+  preparation_time: "30",
   serves: 4,
   user_id: User.second.id)
 
