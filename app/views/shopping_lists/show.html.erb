@@ -2,20 +2,22 @@
   <h1>Shopping List</h1>
 
   <h3>List of Items</h3>
-    <div class="row">
-      <ul>
-        <% @shopping_list.doses_shopping_lists.each do |dose_sl| %>
-          <div class="card-shopping-list">
-            <li>
+    <ul>
+      <% @shopping_list.doses_shopping_lists.each do |dose_sl| %>
+        <div class="card-shopping-list">
+          <li>
+            <div class="ok">
               <div class="ingredients-doses">
                 <input type="checkbox">
                 <span> <%= dose_sl.dose.quantity %> <%= dose_sl.dose.ingredient.name %></span>
               </div>
-              <%= link_to 'Delete', doses_shopping_list_path(dose_sl), method: :delete %>
-            </li>
-          </div>
-        <% end %>
-      </ul>
-    </div>
+              <div class="ingredients-delete">
+                <%= link_to 'Delete', doses_shopping_list_path(dose_sl), method: :delete %>
+              </div>
+            </div>
+          </li>
+        </div>
+      <% end %>
+    </ul>
 </div>
   

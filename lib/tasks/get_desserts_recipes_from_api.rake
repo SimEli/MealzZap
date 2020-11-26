@@ -23,7 +23,7 @@ task get_desserts_recipes_from_api: :environment do
     category = Category.create!(name: "dessert")
   end
 
-  5.times do |i|
+  20.times do |i|
     parsed_recipes = parsed_response["recipes"][i - 1]
     recipe = Recipe.create!(
       #image: parsed_recipes["image"],
