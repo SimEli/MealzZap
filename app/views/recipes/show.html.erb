@@ -26,7 +26,6 @@
     </div>
   </div>
 
-
   <% #if @recipe.user == current_user %>
     <div class="form">
       <%= simple_form_for([@recipe,Dose.new]) do |f| %>
@@ -57,4 +56,5 @@
         <div id="editbtn"><%= link_to "Add Ingredients to Shopping List", recipe_add_shopping_list_path(@recipe), method: :post %></div>
     </div>
   </div>
+</div>
 

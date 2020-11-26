@@ -6,7 +6,7 @@
     <% @recipes.each do |recipe| %>
       <%= link_to recipe_path(recipe),class: "links" do %>
         <div class="card-recipe">
-          <%= cl_image_tag recipe.image.key, height: 400, width: 300, crop: :fill if recipe.image.attached?%>
+          <%= cl_image_tag recipe.image.key, height: 300, width: 300, crop: :fill if recipe.image.attached?%>
           <div class="card-recipe-infos">
             <div>
             <%# WE CAN ADD A FIELD --> ADDED BY 'USER' so when it goes public we know who posted it %>
