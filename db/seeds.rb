@@ -19,6 +19,7 @@
 #   description: "tasty",
 #   preparation_time: "35 min",
 #   cooking_time: "30 min",
+UserMealPlanner.destroy_all
 MealPlanner.destroy_all
 #User.destroy_all
 # pudding = {
