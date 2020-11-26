@@ -2,7 +2,7 @@
   <div class="title">
     <h1>All Recipes</h1>
   </div>
-<div class="cards">
+  <div class="cards">
     <% @recipes.each do |recipe| %>
       <%= link_to recipe_path(recipe),class: "links" do %>
         <div class="card-recipe">
@@ -17,16 +17,12 @@
       <% end %>
     <% end %>
   </div>
-</div>
-
-
-<div class="buttons">
-  <div class="button">
-    @<%= link_to "Back to homepage", root_path %>
+  <div class="buttons">
+    <div class="button">
+      <%= link_to "Add a recipe",new_recipe_path(@recipe) %>
+    </div>
   </div>
-  <div class="button">
-    <%= link_to "Add a recipe",new_recipe_path(@recipe) %>
-  </div>
+
 </div>
 
 
