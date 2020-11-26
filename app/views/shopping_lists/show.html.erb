@@ -11,9 +11,7 @@
                 <input type="checkbox">
                 <span> <%= dose_sl.dose.quantity %> <%= dose_sl.dose.ingredient.name %></span>
               </div>
-              <div class="ingredients-delete">
-                <%= link_to 'Delete', doses_shopping_list_path(dose_sl), method: :delete %>
-              </div>
+                <%= button_to 'Delete', doses_shopping_list_path(dose_sl), method: :delete %>
             </div>
           </li>
         </div>
