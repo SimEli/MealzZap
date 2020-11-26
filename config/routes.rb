@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   resources :shopping_lists
 
+  resources :doses_shopping_lists
+
   resources :users
 
   resources :user_recipes
