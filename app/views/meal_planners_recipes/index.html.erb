@@ -6,7 +6,7 @@
     <% @meal_planner_recipes.each do |meal_planner_recipes| %>
       <%= link_to meal_planners_recipe_path(meal_planner),class: "links" do %>
         <div class="card-meal">
-
+        <%= cl_image_tag recipe.image.key, height: 300, width: 300, crop: :fill if recipe.image.attached?%>
           <div class="card-meal-infos">
             <div>
             <%# WE CAN ADD A FIELD --> ADDED BY 'USER' so when it goes public we know who posted it %>

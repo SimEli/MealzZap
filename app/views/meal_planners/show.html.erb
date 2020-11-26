@@ -6,6 +6,7 @@
     <% @recipes.each do |recipe| %>
       <div class="card-recipe">
         <div class="card-recipe-infos">
+              <%= cl_image_tag recipe.image.key, height: 250, width: 250, crop: :fill if recipe.image.attached?%>
           <h3><%= recipe.tags %></h3>
           <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
           <!-- <p><%= recipe.description.html_safe %></p> -->
