@@ -1,22 +1,26 @@
-<div class="welcome">
-  <h2>Hello <%= @users %></h2>
-</div>
+<div class="container">
+  <div class="container2">
+    <div class="welcome">
+      <h2>Hello <%= @users %></h2>
+    </div>
 
 
-<div class="buttons">
-  <div class="button">
-    <%= link_to "My Cookbook", "/categories" %>
-  </div>
+    <div class="buttons">
+      <div class="button">
+        <%= link_to "My Cookbook", "/categories" %>
+      </div>
 
-  <div class="button">
-    <%= link_to "My Shopping List", "/user_shopping_lists"%>
-  </div>
+      <div class="button">
+        <%= link_to "My Shopping List", "/user_shopping_lists"%>
+      </div>
 
-  <div class="button">
-    <%= link_to "My Meal Plan", "/meal_planners"%>
-  </div>
+      <div class="button">
+        <%= link_to "My Meal Plan", "/meal_planners"%>
+      </div>
 
-  <div class="button">
-    <%= link_to "Go back to homepage", root_path %>
+      <div class="button">
+        <%= link_to "Go back to homepage", root_path %>
+      </div>
+    </div>
   </div>
 </div>
