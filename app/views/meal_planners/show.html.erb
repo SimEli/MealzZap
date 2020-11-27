@@ -10,7 +10,7 @@
             <%= cl_image_tag recipe.image.key, height: 250, width: 250, crop: :fill if recipe.image.attached?%>
             <div class="card-recipe-infos">
               <h5><%= recipe.tags %></h5>
-              <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+              <p><%= link_to recipe.name, recipe_path(recipe) %></p>
             </div>
           </div>
         </div>
