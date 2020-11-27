@@ -1,16 +1,18 @@
 <div class="container">
-  <div class="my_form">
-    <%= simple_form_for(recipe) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :cooking_time %>
-      <%= f.input :preparation_time %>
-      <%= f.input :serves %>
-      <%= f.input :image, as: :file %>
-      <%= f.button :submit, "Create recipe", class: "btn btn-secondary"%>
-    <% end %>
-    <div class="buttons">
-      <div class="button"><%= link_to "Back to my Cookbook", user_recipes_path %></div>
+  <div class="container2">
+    <div class="my_form">
+      <%= simple_form_for(recipe) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :cooking_time %>
+        <%= f.input :preparation_time %>
+        <%= f.input :serves %>
+        <%= f.input :image, as: :file %>
+        <%= f.button :submit, "Create recipe", class: "btn btn-secondary"%>
+      <% end %>
+      <div class="buttons">
+        <div class="button"><%= link_to "Back to my Cookbook", user_recipes_path %></div>
+      </div>
     </div>
   </div>
 </div>
