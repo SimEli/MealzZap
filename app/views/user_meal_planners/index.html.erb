@@ -1,38 +1,40 @@
 <div class="container">
-  <div class="title">
-    <h1>My Meal Plans</h1>
-  </div>
-
-  <div class="meal_planner">
-    <% @user_meal_planners.each do |user_meal_planner| %>
-      <%= link_to meal_planner_path(user_meal_planner.meal_planner) do %>
-        <div class="meal_planner_cards">
-            <div class="title_category">
-            <h2><%= user_meal_planner.meal_planner.name %></h2>
-            <h5 id="category">
-              <%= user_meal_planner.meal_planner.category %>
-            </h5>
-          </div>
-          <div class="card-recipes">
-            <% user_meal_planner.meal_planner.recipes.each do |recipe| %>
-              <div class="card-recipe">
-                <%= cl_image_tag recipe.image.key, height: 300, width: 300, crop: :fill if recipe.image.attached?%>
-                <%= recipe.name %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-  <div class="buttons">
-    <div class="button">
-      <%= link_to "Go back to my profile", users_path %>
+  <div class="container2">
+    <div class="title">
+      <h1>My Meal Plans</h1>
     </div>
 
-    <div class="button">
-      <%= link_to "Find meal plans", meal_planners_path %>
+    <div class="meal_planner">
+      <% @user_meal_planners.each do |user_meal_planner| %>
+        <%= link_to meal_planner_path(user_meal_planner.meal_planner) do %>
+          <div class="meal_planner_cards">
+              <div class="title_category">
+              <h2><%= user_meal_planner.meal_planner.name %></h2>
+              <h5 id="category">
+                <%= user_meal_planner.meal_planner.category %>
+              </h5>
+            </div>
+            <div class="card-recipes">
+              <% user_meal_planner.meal_planner.recipes.each do |recipe| %>
+                <div class="card-recipe">
+                  <%= cl_image_tag recipe.image.key, height: 300, width: 300, crop: :fill if recipe.image.attached?%>
+                  <%= recipe.name %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="buttons">
+      <div class="button">
+        <%= link_to "Go back to my profile", users_path %>
+      </div>
+
+      <div class="button">
+        <%= link_to "Find meal plans", meal_planners_path %>
+      </div>
     </div>
   </div>
 </div>
