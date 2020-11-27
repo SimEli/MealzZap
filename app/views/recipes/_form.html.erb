@@ -7,7 +7,7 @@
       <%= f.input :preparation_time %>
       <%= f.input :serves %>
       <%= f.input :image, as: :file %>
-      <%= f.submit %>
+      <%= f.button :submit, "Create recipe", class: "btn btn-secondary"%>
     <% end %>
     <div class="buttons">
       <div class="button"><%= link_to "Back to my Cookbook", user_recipes_path %></div>
