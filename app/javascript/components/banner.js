@@ -5,7 +5,7 @@ const loadDynamicBannerText = () => {
   if (document.querySelector('#banner-typed-text')){
   new Typed('#banner-typed-text', {
     strings: ["Welcome to MealzZap !"],
-    typeSpeed: 50,
+    typeSpeed: 70,
     loop: true
   });
 }
