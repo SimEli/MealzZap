@@ -5,12 +5,13 @@
     </div>
     <div class="cards">
       <% @recipes.each do |recipe| %>
-        <div class="card-recipe">
-          <div class="card-recipe-infos">
-                <%= cl_image_tag recipe.image.key, height: 250, width: 250, crop: :fill if recipe.image.attached?%>
-            <h3><%= recipe.tags %></h3>
-            <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
-            <!-- <p><%= recipe.description.html_safe %></p> -->
+        <div class="card-recipes">
+          <div class="card-recipe">
+            <%= cl_image_tag recipe.image.key, height: 250, width: 250, crop: :fill if recipe.image.attached?%>
+            <div class="card-recipe-infos">
+              <h5><%= recipe.tags %></h5>
+              <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+            </div>
           </div>
         </div>
       <% end %>
