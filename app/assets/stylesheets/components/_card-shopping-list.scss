@@ -2,15 +2,22 @@ ul {
   list-style-type: none;
   padding-left: 0%;
   position: left;
+  a {
+    color: gray;
+    padding-right: 5px;
+  }
 }
 
 .ok {
   display: flex;
   background-color: white;
-  margin: 5px 0px;
+  margin: 7px 0px;
   width: 500px;
   align-items: flex-start;
-
+  padding: 7px 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  
   .ingredients-doses {
     flex-grow: 1;
     justify-content: space-between;
